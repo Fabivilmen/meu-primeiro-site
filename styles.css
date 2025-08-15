@@ -125,3 +125,10 @@ p {
 }
 .alert.success { background: #d1fae5; color: #065f46; }  /* verde suave */
 .alert.error   { background: #fee2e2; color: #7f1d1d; }  /* vermelho suave */
+/* Rodapé */
+.rodape {
+  text-align: center;
+  color: #475569;
+  padding: 24px 12px 40px;
+}
+
