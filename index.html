@@ -66,6 +66,14 @@
       </a>.
     </p>
   </main>
+<footer class="rodape">
+  <p>© <span id="ano"></span> Fabiane Menezes · Feito com HTML e CSS</p>
+</footer>
+
+<script>
+  // mantém o script que você já tem; este só preenche o ano do rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
 
   <script>
     const form = document.getElementById("contato");
