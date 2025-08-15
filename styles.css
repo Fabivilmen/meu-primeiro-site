@@ -148,4 +148,23 @@ p {
   outline-offset: 2px;
   border-radius: 10px;
 }
+/* Tipografia e espaçamento melhores no celular pequeno */
+@media (max-width: 480px) {
+  .container { padding: 20px; margin: 24px auto; }
+
+  h1 { font-size: 1.8rem; }
+  p  { font-size: 1.1rem; }
+
+  .menu { flex-wrap: wrap; gap: 8px; }
+  .menu a { padding: 8px 12px; }
+
+  .btn { padding: 14px 22px; font-size: 1rem; }
+
+  .form-contato input,
+  .form-contato textarea {
+    padding: 12px;
+    font-size: 1.05rem;   /* campos mais fáceis de ler/tocar */
+  }
+}
+
 
