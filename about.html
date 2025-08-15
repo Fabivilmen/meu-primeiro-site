@@ -23,5 +23,14 @@
     <p>Use o formulário na página inicial.</p>
     <p><a class="btn" href="index.html">Voltar para a página inicial</a></p>
   </main>
+  <footer class="rodape">
+  <p>© <span id="ano"></span> Fabiane Menezes · Feito com HTML e CSS</p>
+</footer>
+
+<script>
+  // preenche o ano do rodapé nesta página também
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
