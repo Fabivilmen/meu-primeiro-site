@@ -166,5 +166,17 @@ p {
     font-size: 1.05rem;   /* campos mais fáceis de ler/tocar */
   }
 }
+/* Limitar a altura da imagem do hero (capa) */
+.hero-imagem img {
+  max-height: 360px;   /* altura máxima no desktop */
+  width: 100%;
+  height: auto;
+}
+
+/* No celular, deixa mais baixinha ainda */
+@media (max-width: 768px) {
+  .hero-imagem img { max-height: 220px; }
+}
+
 
 
