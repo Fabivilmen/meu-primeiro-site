@@ -236,5 +236,46 @@ p {
   .hero-texto h1 { font-size: 1.6rem; }
   .hero-imagem img { max-width: 300px; max-height: 170px; }
 }
+/* === HERO compactado (override final) === */
+.hero {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 4px;    /* bem pouco espaço acima/baixo */
+  padding: 0;           /* sem padding extra */
+}
+
+.hero-texto h1 {
+  font-size: 1.6rem;    /* título menor */
+  margin: 0 0 6px;
+}
+.hero-texto p {
+  margin: 0 0 8px;
+}
+
+/* imagem sempre centralizada e BAIXA */
+.hero-imagem { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+.hero-imagem img {
+  display: block;
+  max-width: 320px;     /* << se ainda ficar grande, diminua este número */
+  height: 180px;        /* altura fixa baixa */
+  width: 100%;
+  object-fit: cover;    /* corta um pouquinho sem deformar */
+  margin: 0 !important; /* zera margens que vinham de .img-responsiva */
+  border-radius: 12px;
+}
+
+/* celular: ainda mais baixinha */
+@media (max-width: 768px) {
+  .hero-imagem img { max-width: 280px; height: 160px; }
+}
+
+/* Menos espaço antes do subtítulo "Fale comigo" */
+h2 { margin: 12px 0 8px; }
+.form-contato { margin-top: 12px; }
 
 
