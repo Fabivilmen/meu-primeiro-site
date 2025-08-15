@@ -95,5 +95,13 @@
       setTimeout(() => { statusBox.style.display = "none"; }, 5000);
     }
   </script>
+  <script>
+  // rolar suavemente até o formulário ao clicar no botão
+  document.querySelector('a.btn[href="#contato"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+
 </body>
 </html>
