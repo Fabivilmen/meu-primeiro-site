@@ -132,3 +132,20 @@ p {
   padding: 24px 12px 40px;
 }
 
+/* Animações suaves */
+.hero-imagem img {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero-imagem img:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+/* Acessibilidade: destaque quando navega com teclado */
+.btn:focus-visible, .menu a:focus-visible, .form-contato input:focus-visible, .form-contato textarea:focus-visible {
+  outline: 3px solid rgba(37,99,235,.5);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
