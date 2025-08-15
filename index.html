@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Primeiro Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <nav class="menu">
+      <a href="index.html" class="ativo">Início</a>
+      <a href="about.html">Sobre</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-texto">
+        <h1>Olá, mundo!</h1>
+        <p>Meu primeiro site agora tem <strong>layout responsivo</strong> 🎯</p>
+        <a class="btn" href="#">Clique aqui</a>
+      </div>
+      <div class="hero-imagem">
+        <!-- provisório: imagem da web; depois trocaremos pela sua -->
+        <img class="img-responsiva" src="https://picsum.photos/960/480" alt="Imagem de exemplo">
+      </div>
+    </section>
+
+    <h2>Fale comigo</h2>
+    <form class="form-contato" id="contato"
+          action="https://formspree.io/f/mjkozjbz" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <input type="hidden" name="_subject" value="Nova mensagem do site">
+      <input type="text" name="empresa" autocomplete="off" tabindex="-1"
+             style="position:absolute; left:-9999px; opacity:0; height:0; width:0;">
+
+      <button type="submit" class="btn">Enviar</button>
+      <div id="status" aria-live="polite" class="alert" style="display:none;"></div>
+    </form>
+
+    <p>Veja meu
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+        guia rápido de HTML
+      </a>.
+    </p>
+  </main>
+
+  <script>
+    const form = document.getElementById("contato");
+    const statusBox = document.getElementById("status");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      if (fd.get("empresa")) return;
+      try {
+        const res = await fetch(form.action, { method: "POST", body: fd, headers: { "Accept": "application/json" }});
+        if (res.ok) { form.reset(); mostrar("Mensagem enviada com sucesso! ✅", true); }
+        else { mostrar("Não foi possível enviar. Tente novamente. ❌", false); }
+      } catch { mostrar("Erro de conexão. Verifique sua internet. ⚠️", false); }
+    });
+    function mostrar(msg, ok) {
+      statusBox.textContent = msg;
+      statusBox.className = "alert " + (ok ? "success" : "error");
+      statusBox.style.display = "block";
+      setTimeout(() => { statusBox.style.display = "none"; }, 5000);
+    }
+  </script>
+</body>
+</html>
