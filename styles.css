@@ -177,6 +177,26 @@ p {
 @media (max-width: 768px) {
   .hero-imagem img { max-height: 220px; }
 }
+/* Ajuste fino da imagem do hero */
+.hero-imagem { 
+  display: flex; 
+  justify-content: center;      /* centraliza a imagem na coluna */
+}
+
+.hero-imagem img {
+  max-width: 420px;             /* limita a largura no desktop */
+  max-height: 260px;            /* deixa a capa mais baixa */
+  width: 100%;
+  height: auto;
+}
+
+/* No celular, ainda menor */
+@media (max-width: 768px) {
+  .hero-imagem img { 
+    max-width: 320px; 
+    max-height: 180px; 
+  }
+}
 
 
 
