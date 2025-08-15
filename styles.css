@@ -198,5 +198,43 @@ p {
   }
 }
 
+/* ===== Compactar a capa (hero) ===== */
+.hero {
+  gap: 16px;                /* menos espaço entre texto e imagem */
+  padding-block: 8px;       /* um pouco de respiro interno */
+  margin-top: 4px;          /* menos altura no topo */
+  margin-bottom: 8px;       /* menos altura embaixo */
+  align-items: center;
+}
+
+.hero-texto h1 {
+  font-size: 1.8rem;        /* título um pouco menor */
+  margin: 0 0 8px;          /* tira espaço extra acima */
+}
+
+.hero-texto p {
+  margin: 0 0 8px;          /* tira espaço extra */
+}
+
+/* Remove a margem padrão da imagem dentro do hero */
+.hero-imagem .img-responsiva,
+.hero-imagem img {
+  margin: 0 !important;
+}
+
+/* Limita a imagem e centraliza na coluna */
+.hero-imagem { display: flex; justify-content: center; }
+.hero-imagem img {
+  max-width: 380px;         /* menor largura no desktop */
+  max-height: 220px;        /* menor altura no desktop */
+  width: 100%;
+  height: auto;
+}
+
+/* No celular, mais compacto ainda */
+@media (max-width: 768px) {
+  .hero-texto h1 { font-size: 1.6rem; }
+  .hero-imagem img { max-width: 300px; max-height: 170px; }
+}
 
 
